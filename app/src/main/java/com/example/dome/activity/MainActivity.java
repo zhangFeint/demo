@@ -25,6 +25,7 @@ import com.library.depending.customview.LoadingDialog;
 import com.library.utils.httpservice.HttpRequestUtils;
 import com.library.utils.httpservice.OkHttp3NetWork;
 import com.library.utils.httpservice.OnLoadListener;
+import com.library.utils.httpservice.OnNetWorkInterface;
 import com.library.utils.httpservice.SubmitData;
 import com.library.utils.httpservice.UploadDataAsyncTask;
 
@@ -190,7 +191,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         };
 
-        OkHttp3NetWork.submitDialog(this, HttpRequestUtils.REQUEST_GET, loadListener, new UploadDataAsyncTask.NetWorkInterface() {
+        OkHttp3NetWork.submitDialog(this, HttpRequestUtils.REQUEST_GET, loadListener, new OnNetWorkInterface() {
             @Override
             public boolean validate() {
 

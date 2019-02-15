@@ -26,7 +26,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.github.zhangFeint:AndroidUtils:1.1.1'
+    implementation 'com.github.zhangFeint:AndroidUtils:1.1.6'
     implementation 'com.github.zhangFeint:custom_view:1.1.1'
 //  时间选择器
     implementation 'com.contrarywind:Android-PickerView:4.1.7'
