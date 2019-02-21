@@ -3,7 +3,6 @@ package com.example.dome.activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
-import com.example.dome.PermissionsUtils;
 import com.example.dome.R;
 import com.example.dome.activity.ceiling.CeilingActivity;
 import com.example.dome.activity.image.ImageCollectionActivity;
@@ -27,7 +25,6 @@ import com.library.utils.httpservice.OkHttp3NetWork;
 import com.library.utils.httpservice.OnLoadListener;
 import com.library.utils.httpservice.OnNetWorkInterface;
 import com.library.utils.httpservice.SubmitData;
-import com.library.utils.httpservice.UploadDataAsyncTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -56,19 +53,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
-        PermissionsUtils.getInstance().setPermissionListener(new PermissionsUtils.OnPermissionListener() {
-            @Override
-            public void onAccredit() {
-                Log.d("PermissionsUtils: ", "onAccredit: ");
-            }
-
-            @Override
-            public void onNotAuthorized() {
-                Log.d("PermissionsUtils: ", "onNotAuthorized: ");
-            }
-        });
-        PermissionsUtils.getInstance().accreditPermissions(this, PermissionsUtils.CAMERA_PERMISSIONS, 111);
-
         initListener();
     }
 
@@ -81,11 +65,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         button4.setOnClickListener(this);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionsUtils.getInstance().isPermissionsResult(grantResults);
-    }
 
 
     @Override
